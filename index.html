@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Видео в ряд</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: black;
+      overflow: hidden;
+      height: 100vh;
+      width: 100vw;
+    }
+
+    .video-row {
+      display: flex;
+      height: 100vh;
+      width: 100vw;
+      gap: 0;
+    }
+
+    video {
+      flex: 1;
+      height: 100%;
+      object-fit: cover;
+      background: black;
+      min-width: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="video-row" id="videoRow"></div>
+
+  <script>
+    (function() {
+      const videoSources = [
+        "https://github.com/ShramC/shramc.github.io/raw/refs/heads/main/video_2026-07-27_23-03-19.mp4",
+        "https://github.com/ShramC/shramc.github.io/raw/refs/heads/main/video_2026-07-24_23-22-04.mp4",
+        "https://github.com/ShramC/shramc.github.io/raw/refs/heads/main/video_2026-07-21_16-52-34.mp4",
+        "https://github.com/ShramC/shramc.github.io/raw/refs/heads/main/ezgif-2-5164336377.gif.mp4"
+      ];
+
+      const row = document.getElementById('videoRow');
+      const videos = [];
+
+      videoSources.forEach(src => {
+        const video = document.createElement('video');
+        video.src = src;
+        video.autoplay = true;
+        video.muted = true;
+        video.loop = true;
+        video.playsInline = true;
+        video.setAttribute('playsinline', '');
+        video.volume = 1.0;
+
+        video.addEventListener('loadedmetadata', () => {
+          video.muted = false;
+          video.volume = 1.0;
+          video.play().catch(() => {});
+        });
+
+        video.addEventListener('canplay', () => {
+          video.muted = false;
+          video.volume = 1.0;
+          if (video.paused) video.play().catch(() => {});
+        });
+
+        video.addEventListener('playing', () => {
+          video.muted = false;
+          video.volume = 1.0;
+        });
+
+        video.addEventListener('play', () => {
+          video.muted = false;
+          video.volume = 1.0;
+        });
+
+        videos.push(video);
+        row.appendChild(video);
+      });
+
+      setTimeout(() => {
+        videos.forEach(v => {
+          v.muted = false;
+          v.volume = 1.0;
+          if (v.paused) v.play().catch(() => {});
+        });
+      }, 500);
+
+      setTimeout(() => {
+        videos.forEach(v => {
+          v.muted = false;
+          v.volume = 1.0;
+          if (v.paused) v.play().catch(() => {});
+        });
+      }, 1500);
+
+    })();
+  </script>
+</body>
+</html>
