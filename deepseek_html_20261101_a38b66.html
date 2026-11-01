@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OpenPort - Free Port Forwarding &amp; Reverse Tunnel to Localhost (TCP/UDP)</title>
+<meta name="description" content="Free port forwarding and reverse tunneling service with strict 0 logs policy. Expose localhost TCP &amp; UDP ports without personal data collection or tracking. Lightweight alternative to ngrok, portmap.io, and bore.">
+<meta name="keywords" content="port forwarding, free port forwarding, reverse tunnel, expose localhost, cgnat bypass, port forwarding without router, 0 logs, zero logs policy, privacy port forwarding, no tracking, portmap alternative, ngrok alternative, bore alternative, tcp tunnel, udp tunnel, localhost to internet, minecraft port forwarding, webhook tunnel, reverse proxy">
+<meta name="author" content="openport.pw">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<link rel="canonical" href="https://openport.pw/">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://openport.pw/">
+<meta property="og:title" content="OpenPort - Free Port Forwarding &amp; Reverse Tunneling">
+<meta property="og:description" content="Expose localhost TCP &amp; UDP ports to the internet without a public IP or router configuration. Instant permanent dedicated ports.">
+<meta property="og:site_name" content="openport.pw">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="OpenPort - Free Port Forwarding &amp; Reverse Tunneling">
+<meta name="twitter:description" content="Expose localhost TCP &amp; UDP ports to the internet without a public IP or router configuration. Instant permanent dedicated ports.">
+
+<meta name="theme-color" content="#000000">
+<link rel="icon" type="image/svg+xml" href="https://openport.pw/favicon.svg">
+<link rel="alternate icon" type="image/x-icon" href="https://openport.pw/favicon.ico">
+
+<meta http-equiv="onion-location" content="http://xk6fqhmbbw3kwzgxi4he6xr2lin3kcuj6nry4c7lqgj4vi77qleom5id.onion/">
+
+<link rel="stylesheet" href="styles.css">
+<script>document.documentElement.className += ' js-enabled';</script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="header-inner">
+        <pre class="lain-art" role="img" aria-label="Lain Iwakura ASCII Art">PLACEHOLDER_ASCII_ART</pre>
+        <div class="header-text">
+          <h1>openport</h1>
+          <p class="sub">free persistent tcp &amp; udp port forwarding to localhost.</p>
+          <p class="quote">"Close the world, Open the nExt."</p>
+        </div>
+      </div>
+    </header>
+
+    <main>
+    <div class="box">
+      <h2 class="box-title">install &amp; download</h2>
+      <p class="box-desc">run in your terminal or download the GUI desktop client:</p>
+
+      <div class="tabs">
+        <button id="btn-linux" class="tab-btn" data-tab="linux">linux / mac</button>
+        <button id="btn-windows" class="tab-btn active" data-tab="windows">windows</button>
+        <button id="btn-ai" class="tab-btn" data-tab="ai">for ai / cursor</button>
+      </div>
+
+      <div id="tab-linux" class="tab-content">
+        <div class="cmd-label">linux / mac:</div>
+        <div class="cmd-row">
+          <code>curl -sSL https://openport.pw/install.sh | bash</code>
+          <button class="copy-btn" aria-label="Copy to clipboard">copy</button>
+        </div>
+      </div>
+
+      <div id="tab-windows" class="tab-content active">
+        <div class="cmd-label">windows powershell:</div>
+        <div class="cmd-row" style="margin-bottom: 12px;">
+          <code>iwr -useb https://openport.pw/install.ps1 | iex</code>
+          <button class="copy-btn" aria-label="Copy to clipboard">copy</button>
+        </div>
+
+        <div class="cmd-label">windows cmd:</div>
+        <div class="cmd-row" style="margin-bottom: 12px;">
+          <code>curl -sSL https://openport.pw/install.cmd -o "%temp%\install.cmd" &amp;&amp; "%temp%\install.cmd"</code>
+          <button class="copy-btn" aria-label="Copy to clipboard">copy</button>
+        </div>
+
+        <div class="cmd-label">or download windows gui app:</div>
+        <div class="cmd-row" style="margin-bottom: 10px;">
+          <code>OpenPort GUI (Desktop Interface for Windows)</code>
+          <a href="https://openport.pw/OpenPort.exe" class="download-btn">download .exe</a>
+        </div>
+        <p class="hint-text">
+          standalone Windows client with a graphical user interface. No terminal required — simply enter your local port and start forwarding with a single click.
+        </p>
+      </div>
+
+      <div id="tab-ai" class="tab-content">
+        <div class="cmd-label">prompt for cursor, claude, windsurf or chatgpt:</div>
+        <div class="cmd-row" style="margin-bottom: 10px;">
+          <code class="code-wrap">Install OpenPort from https://openport.pw, expose port &lt;PORT&gt;, and give me the public URL.</code>
+          <button class="copy-btn" aria-label="Copy AI prompt to clipboard">copy</button>
+        </div>
+        <p class="hint-text">
+          paste into Cursor Composer, Claude Code, Windsurf, or Copilot. The AI will detect your OS, install the lightweight client, tunnel your local port in the background, and provide the live link. No signup or tokens required.
+        </p>
+      </div>
+    </div>
+
+    <div class="box">
+      <h2 class="box-title">commands</h2>
+      <table>
+        <tbody>
+        <tr>
+          <td class="cmd">openport &lt;local_port&gt;</td>
+          <td class="desc">forward local port to the internet (e.g. <code>openport 8080</code>). prints your public port.</td>
+        </tr>
+        <tr>
+          <td class="cmd">openport info</td>
+          <td class="desc">show assigned permanent port and secret token.</td>
+        </tr>
+        <tr>
+          <td class="cmd">openport link &lt;id&gt; &lt;tok&gt;</td>
+          <td class="desc">link your existing port to another computer.</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="box">
+      <h2 class="box-title">features &amp; use cases</h2>
+      <ul class="feature-list">
+        <li>
+          <span class="feature-name">zero signup</span>
+          <span class="feature-desc">no registration, no credit card, no email required. run the install script and you immediately get a port.</span>
+        </li>
+        <li>
+          <span class="feature-name">privacy &amp; 0 logs</span>
+          <span class="feature-desc">oriented towards user privacy. We do not collect personal data, do not track anything, and enforce a strict 0 logs policy.</span>
+        </li>
+        <li>
+          <span class="feature-name">dual tcp &amp; udp</span>
+          <span class="feature-desc">simultaneous TCP and UDP forwarding on the same port. ideal for game servers (Minecraft, Valheim), voice services, and raw sockets.</span>
+        </li>
+        <li>
+          <span class="feature-name">permanent port</span>
+          <span class="feature-desc">your assigned public port stays with you across restarts. no broken webhook URLs or reconfiguring configs every run.</span>
+        </li>
+        <li>
+          <span class="feature-name">cgnat bypass</span>
+          <span class="feature-desc">works behind carrier-grade NAT, hotel Wi-Fi, strict enterprise firewalls, and home routers without manual port forwarding.</span>
+        </li>
+        <li>
+          <span class="feature-name">native rust core</span>
+          <span class="feature-desc">powered by Rathole with TCP_NODELAY and BBR congestion control for minimal latency and line-rate throughput.</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="box">
+      <h2 class="box-title">comparison</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>feature</th>
+            <th>openport</th>
+            <th>portmap.io</th>
+            <th>ngrok (free)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>setup</td>
+            <td>1 command</td>
+            <td>OpenVPN config</td>
+            <td>auth token + binary</td>
+          </tr>
+          <tr>
+            <td>protocols</td>
+            <td>tcp + udp simultaneously</td>
+            <td>tcp or udp (separate)</td>
+            <td>tcp or http</td>
+          </tr>
+          <tr>
+            <td>port permanence</td>
+            <td>permanent port</td>
+            <td>random / paid</td>
+            <td>changes on restart</td>
+          </tr>
+          <tr>
+            <td>privacy &amp; logs</td>
+            <td>0 logs policy &amp; no tracking</td>
+            <td>account &amp; connection logs</td>
+            <td>telemetry &amp; account tracking</td>
+          </tr>
+          <tr>
+            <td>price</td>
+            <td>free</td>
+            <td>1 rule free</td>
+            <td>bandwidth &amp; session limits</td>
+          </tr>
+          <tr>
+            <td>engine</td>
+            <td>native rust (rathole)</td>
+            <td>openvpn client</td>
+            <td>go agent</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="box" id="donate">
+      <h2 class="box-title">donate &amp; server maintenance</h2>
+      <p class="box-desc">
+        openport is 100% free with no paywalls or ads. donations help keep our high-speed servers, dedicated domain, and gigabit reverse tunneling running smoothly:
+      </p>
+
+      <div class="donation-progress-wrap">
+        <div class="donation-stats">
+          <span class="donation-goal-label">monthly infrastructure &amp; server goal:</span>
+          <span class="donation-goal-numbers"><strong id="donate-raised">$0.00</strong> / <span id="donate-goal">$50.00</span> (<span id="donate-percent">0%</span>)</span>
+        </div>
+        <div class="progress-bar-container">
+          <div class="progress-bar-fill" id="donate-progress-fill"></div>
+        </div>
+        <div class="progress-bar-labels">
+          <span>$0</span>
+          <span id="donate-status-text">need $50.00 to cover this month's high-speed servers, 1Gbps bandwidth &amp; maintenance</span>
+          <span id="donate-goal-max">$50</span>
+        </div>
+      </div>
+
+      <div class="crypto-list">
+        <div class="crypto-item">
+          <div class="crypto-header">
+            <span class="crypto-name">bitcoin (btc)</span>
+            <span class="crypto-tag">native segwit</span>
+          </div>
+          <div class="cmd-row">
+            <code>bc1q4dvqvy5nryx4syfdacurp4y844xrq0mwhh0z4y</code>
+            <button class="copy-btn" aria-label="Copy to clipboard">copy</button>
+          </div>
+        </div>
+
+        <div class="crypto-item">
+          <div class="crypto-header">
+            <span class="crypto-name">ethereum (eth / erc20)</span>
+            <span class="crypto-tag">evm network</span>
+          </div>
+          <div class="cmd-row">
+            <code>0x97b567f8F58fDB722e571CaFe7E959E8657f7ef0</code>
+            <button class="copy-btn" aria-label="Copy to clipboard">copy</button>
+          </div>
+        </div>
+
+        <div class="crypto-item">
+          <div class="crypto-header">
+            <span class="crypto-name">usdt (trc20)</span>
+            <span class="crypto-tag">tron network</span>
+          </div>
+          <div class="cmd-row">
+            <code>TNAV1EMPLhHv9K17URfga22qN7WXZwNWmn</code>
+            <button class="copy-btn" aria-label="Copy to clipboard">copy</button>
+          </div>
+        </div>
+
+        <div class="crypto-item">
+          <div class="crypto-header">
+            <span class="crypto-name">usdt (bep20)</span>
+            <span class="crypto-tag">bnb smart chain</span>
+          </div>
+          <div class="cmd-row">
+            <code>0x97b567f8F58fDB722e571CaFe7E959E8657f7ef0</code>
+            <button class="copy-btn" aria-label="Copy to clipboard">copy</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="box">
+      <h2 class="box-title">faq</h2>
+      <div class="faq-item">
+        <h3 class="faq-q">how is openport funded?</h3>
+        <div class="faq-a">OpenPort is an independent project funded entirely through voluntary crypto donations from users. We need ~$50/month to keep the high-speed gigabit servers, DDoS mitigation, and domain running smoothly. You can support the project in the <a href="#donate" class="inline-link">donation section</a> above.</div>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-q">how is openport different from portmap.io?</h3>
+        <div class="faq-a">portmap.io requires generating and running an OpenVPN client with configuration files. OpenPort needs no VPN or configuration: just run a single lightweight command to tunnel any local port.</div>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-q">how do i host game servers (Minecraft, etc.)?</h3>
+        <div class="faq-a">run <code>openport 25565</code>. Friends can join using <code>openport.pw:&lt;your_assigned_port&gt;</code>. Both TCP and UDP are enabled by default.</div>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-q">does it work behind router / CGNAT?</h3>
+        <div class="faq-a">yes. The client creates an outbound encrypted reverse tunnel to openport.pw, completely bypassing NAT, CGNAT, and firewall restrictions without touching your router.</div>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-q">does openport track users or keep logs?</h3>
+        <div class="faq-a">no. OpenPort is oriented towards user privacy. We do not collect personal data, do not track anything, and enforce a strict 0 logs policy. Tunnel traffic is never inspected, monitored, or recorded.</div>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-q">how do i report abuse or illegal content?</h3>
+        <div class="faq-a">we enforce a strict zero-tolerance policy against malware, phishing, botnets, and illegal activity. If you detect abusive or unlawful traffic on any openport.pw port, report it immediately to <a href="mailto:abuse@openport.pw" class="inline-link">abuse@openport.pw</a> with the port number. Abusive tunnels and accounts are permanently terminated.</div>
+      </div>
+    </div>
+
+    <div class="box" id="privacy">
+      <h2 class="box-title">privacy &amp; 0 logs policy</h2>
+      <p class="box-desc box-desc-flat">
+        OpenPort is oriented towards user privacy. We do not collect personal data, do not track or profile user activity, and maintain a strict 0 logs policy. Tunnel traffic is relayed in real time with zero inspection, zero metadata recording, and zero logging.
+      </p>
+    </div>
+
+    <div class="box">
+      <h2 class="box-title">abuse &amp; security contact</h2>
+      <p class="box-desc box-desc-flat">
+        OpenPort is designed strictly for authorized development and server hosting. Any illegal content, malware distribution, or unauthorized activity is strictly prohibited. To report an abusive port or malicious traffic, please email <a href="mailto:abuse@openport.pw" class="inline-link inline-link-bold">abuse@openport.pw</a>.
+      </p>
+    </div>
+    </main>
+
+    <footer>
+      <div class="footer-stats">
+        <div>active ports: <span id="stat-active">49</span></div>
+        <div>registered users: <span id="stat-users">952</span></div>
+      </div>
+      <div class="footer-links">
+        <a href="#donate">donate</a>
+        <a href="#privacy">privacy</a>
+        <a href="https://t.me/saavl" target="_blank" rel="noopener noreferrer">telegram (@saavl)</a>
+        <a href="mailto:abuse@openport.pw">abuse@openport.pw</a>
+        <a href="http://xk6fqhmbbw3kwzgxi4he6xr2lin3kcuj6nry4c7lqgj4vi77qleom5id.onion/" target="_blank" rel="noopener noreferrer">tor mirror</a>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js" defer></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://openport.pw/#website",
+      "url": "https://openport.pw/",
+      "name": "OpenPort",
+      "description": "Free port forwarding and reverse tunneling service to expose localhost to the public internet.",
+      "inLanguage": "en"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://openport.pw/#software",
+      "name": "OpenPort",
+      "operatingSystem": "Linux, macOS, Windows",
+      "applicationCategory": "DeveloperApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Expose localhost TCP and UDP ports behind NAT or firewalls with permanent dedicated ports."
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://openport.pw/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How is OpenPort funded?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "OpenPort is an independent project funded entirely through voluntary crypto donations from users. We need ~$50/month to keep the high-speed gigabit servers, DDoS mitigation, and domain running smoothly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is OpenPort different from portmap.io or ngrok?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "portmap.io requires generating and running an OpenVPN client with configuration files. OpenPort needs no VPN or configuration: just run a single lightweight command to tunnel any local port with zero setup."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I host game servers (Minecraft, etc.)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Run openport 25565. Friends can join using openport.pw:<your_assigned_port>. Both TCP and UDP are enabled by default."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it work behind router / CGNAT?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The client creates an outbound encrypted reverse tunnel to openport.pw, completely bypassing NAT, CGNAT, and firewall restrictions without touching your router."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does OpenPort track users or store logs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. OpenPort is strictly privacy-oriented. We do not collect personal data, do not track users, and have a strict 0 logs policy. Tunnel traffic is never inspected, monitored, or recorded."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I report abuse or illegal content?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We enforce a strict zero-tolerance policy against malware, phishing, botnets, and illegal activity. If you detect abusive or unlawful traffic on any openport.pw port, report it immediately to abuse@openport.pw with the port number. Abusive tunnels and accounts are permanently terminated."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</body>
+</html>
